@@ -38,20 +38,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.processFiles = void 0;
 var allFiles_1 = require("./allFiles");
-var buildSearchFile_1 = require("./buildSearchFile");
 var reportFilesResult_1 = require("./reportFilesResult");
+var searchFiles_1 = require("./searchFiles");
 function processFiles(configChecked) {
     return __awaiter(this, void 0, void 0, function () {
-        var files, searchFile, finalResult;
+        var files, finalResult;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, allFiles_1.allFiles(configChecked.root)];
                 case 1:
                     files = _a.sent();
-                    searchFile = buildSearchFile_1.buildSearchFile(configChecked);
-                    finalResult = files.reduce(searchFile, {
-                        tag: "no-rejected-file-yet",
-                    });
+                    finalResult = searchFiles_1.searchFiles(configChecked, files);
                     return [2 /*return*/, reportFilesResult_1.reportFilesResult(finalResult)];
             }
         });

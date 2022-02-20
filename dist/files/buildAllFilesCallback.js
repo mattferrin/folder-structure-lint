@@ -4,9 +4,9 @@
 /* eslint-disable functional/no-conditional-statement */
 /* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.allFilesCallback = void 0;
-function allFilesCallback(resolve, reject) {
-    return function allFilesGlob(error, files) {
+exports.buildAllFilesCallback = void 0;
+function buildAllFilesCallback(resolve, reject) {
+    return function allFilesCallback(error, files) {
         if (error) {
             reject(error);
         }
@@ -15,4 +15,4 @@ function allFilesCallback(resolve, reject) {
         }
     };
 }
-exports.allFilesCallback = allFilesCallback;
+exports.buildAllFilesCallback = buildAllFilesCallback;

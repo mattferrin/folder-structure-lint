@@ -1,15 +1,11 @@
-import { allFiles } from "./allFiles";
-import { buildSearchFile, FileResult } from "./buildSearchFile";
 import { CheckedConfig } from "../config/execute";
+import { allFiles } from "./allFiles";
 import { reportFilesResult } from "./reportFilesResult";
+import { searchFiles } from "./searchFiles";
 
 export async function processFiles(configChecked: CheckedConfig) {
   const files = await allFiles(configChecked.root);
-
-  const searchFile = buildSearchFile(configChecked);
-  const finalResult = files.reduce<FileResult>(searchFile, {
-    tag: "no-rejected-file-yet" as const,
-  });
+  const finalResult = searchFiles(configChecked, files);
 
   return reportFilesResult(finalResult);
 }
