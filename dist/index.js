@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var execute_1 = require("./functions/execute");
+var execute_1 = require("./config/execute");
 execute_1.execute().then(function (executed) {
     switch (executed.tag) {
         case "exit-and-fail":

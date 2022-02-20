@@ -37,14 +37,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.execute = void 0;
+/* eslint-disable functional/functional-parameters */
 var openConfig_1 = require("./openConfig");
-var checkConfigType_1 = require("./checkConfigType");
-var allFiles_1 = require("./allFiles");
-var buildSearchFile_1 = require("./buildSearchFile");
+var processConfig_1 = require("./processConfig");
 function execute() {
     return __awaiter(this, void 0, void 0, function () {
         var openedConfig;
-        var _this = this;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, openConfig_1.openConfig()];
@@ -52,46 +50,7 @@ function execute() {
                     openedConfig = _a.sent();
                     switch (openedConfig.tag) {
                         case "open-success":
-                            // funky `((): Exit => {})()` wrap and invoke
-                            // ... only funky to nudge compiler to infer tyes
-                            return [2 /*return*/, (function () { return __awaiter(_this, void 0, void 0, function () {
-                                    var checkedConfig, configChecked, _a, files, searchFile, finalResult;
-                                    return __generator(this, function (_b) {
-                                        switch (_b.label) {
-                                            case 0:
-                                                checkedConfig = checkConfigType_1.checkConfigType(openedConfig.result);
-                                                configChecked = openedConfig.result;
-                                                _a = checkedConfig.tag;
-                                                switch (_a) {
-                                                    case "invalid-config": return [3 /*break*/, 1];
-                                                    case "valid-config": return [3 /*break*/, 2];
-                                                }
-                                                return [3 /*break*/, 4];
-                                            case 1: return [2 /*return*/, {
-                                                    tag: "exit-and-fail",
-                                                    message: checkedConfig.message,
-                                                }];
-                                            case 2: return [4 /*yield*/, allFiles_1.allFiles(configChecked.root)];
-                                            case 3:
-                                                files = _b.sent();
-                                                searchFile = buildSearchFile_1.buildSearchFile(configChecked);
-                                                finalResult = files.reduce(searchFile, {
-                                                    tag: "no-rejected-file-yet",
-                                                });
-                                                switch (finalResult.tag) {
-                                                    case "rejected-file":
-                                                        return [2 /*return*/, {
-                                                                tag: "exit-and-fail",
-                                                                message: finalResult.message,
-                                                            }];
-                                                    case "no-rejected-file-yet":
-                                                        return [2 /*return*/, { tag: "exit-and-pass" }];
-                                                }
-                                                _b.label = 4;
-                                            case 4: return [2 /*return*/];
-                                        }
-                                    });
-                                }); })()];
+                            return [2 /*return*/, processConfig_1.processConfig(openedConfig)];
                         case "open-error":
                             return [2 /*return*/, { tag: "exit-and-fail", message: openedConfig.message }];
                     }

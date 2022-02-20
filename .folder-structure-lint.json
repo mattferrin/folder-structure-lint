@@ -1,4 +1,10 @@
 {
   "root": "src",
-  "rules": ["src/functions/*.ts", "src/index.ts"]
+  "rules": [
+    "src/index.ts",
+
+    "src/config/*.ts",
+    "src/files/*.ts",
+    "src/rules/*.ts"
+  ]
 }

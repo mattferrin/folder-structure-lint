@@ -1,4 +1,8 @@
 "use strict";
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/no-try-statement */
+/* eslint-disable functional/no-return-void */
+/* eslint-disable functional/functional-parameters */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,42 +39,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.openConfig = void 0;
-var fs_1 = __importDefault(require("fs"));
+var readConfigFile_1 = require("./readConfigFile");
 function openConfig() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/, new Promise(function (accept, reject) {
-                    var configFile = ".folder-structure-lint.json";
-                    var message = "Could not open the config file \"" + configFile + "\"";
+            return [2 /*return*/, new Promise(function (accept) {
                     try {
-                        fs_1.default.readFile(configFile, "utf8", function (err, data) {
-                            if (err) {
-                                accept({
-                                    tag: "open-error",
-                                    message: message,
-                                });
-                            }
-                            else if (!data) {
-                                console.log(data, "fcd8b8f9-19cb-46f9-90c0-49e4e6d267d0");
-                                accept({
-                                    tag: "open-error",
-                                    message: message,
-                                });
-                            }
-                            else {
-                                accept({ tag: "open-success", result: JSON.parse(data) });
-                            }
-                        });
+                        readConfigFile_1.readConfigFile(accept);
                     }
                     catch (error) {
                         accept({
                             tag: "open-error",
-                            message: message,
+                            message: readConfigFile_1.message,
                         });
                     }
                 })];

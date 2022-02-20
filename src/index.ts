@@ -1,4 +1,4 @@
-import { execute } from "./functions/execute";
+import { execute } from "./config/execute";
 
 execute().then((executed): number => {
   switch (executed.tag) {
