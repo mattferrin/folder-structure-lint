@@ -27,4 +27,23 @@ module.exports = {
       { max: 15, skipBlankLines: true, skipComments: true },
     ],
   },
+  overrides: [
+    {
+      files: ["*.test.ts"],
+      rules: {
+        "functional/no-expression-statement": "off",
+        "functional/no-return-void": "off",
+        "functional/functional-parameters": "off",
+        "max-lines-per-function": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "functional/prefer-readonly-type": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+      },
+    },
+  ],
 };
