@@ -29,10 +29,20 @@
     "build": "rimraf dist && tsc",
     "build:w": "tsc --watch",
     "test": "jest src --watchAll",
+    "test:coverage": "jest src --coverage --collectCoverageFrom=src/**/*.ts",
     "format": "prettier --write src/**/*.ts",
     "lint": "eslint --fix src/**/*.ts",
     "fsl": "node dist/index.js"
   },
   "author": "",
-  "license": "ISC"
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 51,
+        "functions": 61,
+        "lines": 56,
+        "statements": 56
+      }
+    }
+  }
 }
