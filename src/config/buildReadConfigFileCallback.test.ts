@@ -40,7 +40,7 @@ describe.each([
   test(testName, () => {
     const accept = jest.fn();
     const readConfigFileCallback = buildReadConfigFileCallback(accept);
-    readConfigFileCallback(err, data);
+    readConfigFileCallback(err, data as any);
 
     expect(accept).toBeCalledTimes(1);
     expect(accept).toBeCalledWith(resultExpected);

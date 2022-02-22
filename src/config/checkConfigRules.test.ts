@@ -23,7 +23,8 @@ describe("checkConfigRules", () => {
         .mockImplementation((() => {}) as any);
 
       const input = [value, { tag: "valid-config" } as ValidConfig];
-      checkConfigRules(...input);
+      // eslint-disable-next-line prefer-spread
+      checkConfigRules.apply(null, input as any);
 
       expect(checkConfigRulesArrayMock).toBeCalledTimes(1);
       expect(checkConfigRulesArrayMock).toBeCalledWith(...input);

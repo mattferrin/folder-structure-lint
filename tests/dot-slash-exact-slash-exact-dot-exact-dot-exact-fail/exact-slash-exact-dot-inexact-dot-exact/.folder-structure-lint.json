@@ -1,0 +1,4 @@
+{
+  "root": ".",
+  "rules": ["./test.test.ts", "./exact/exact.exact.exact"]
+}

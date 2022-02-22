@@ -30,6 +30,7 @@
     "build:w": "tsc --watch",
     "test": "jest src --watchAll",
     "test:coverage": "jest src --coverage --collectCoverageFrom=src/**/*.ts",
+    "test:box": "jest tests --watchAll",
     "format": "prettier --write src/**/*.ts",
     "lint": "eslint --fix src/**/*.ts",
     "fsl": "node dist/index.js"
@@ -38,10 +39,10 @@
   "jest": {
     "coverageThreshold": {
       "global": {
-        "branches": 51,
-        "functions": 61,
-        "lines": 56,
-        "statements": 56
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
       }
     }
   }

@@ -8,7 +8,7 @@ describe("openConfig", () => {
   const uniqueExpectedResult = "fbae3600-418f-4501-961f-bac8833437c2";
   test.each([
     [
-      (resolve) => {
+      (resolve: (arg0: string) => void) => {
         resolve(uniqueExpectedResult);
       },
       uniqueExpectedResult,
@@ -27,7 +27,7 @@ describe("openConfig", () => {
     async (readConfigFileThrow, resultExpected) => {
       const readConfigFileMock = jest
         .spyOn(readConfigFile, "readConfigFile")
-        .mockImplementation(readConfigFileThrow);
+        .mockImplementation(readConfigFileThrow as any);
 
       const result = await openConfig();
 

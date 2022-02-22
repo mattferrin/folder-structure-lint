@@ -1,10 +1,15 @@
 {
   "root": "src",
   "rules": [
-    "src/index.ts",
+    "src/index.*",
 
     "src/config/*.ts",
     "src/files/*.ts",
-    "src/rules/*.ts"
+    "src/rules/*.ts",
+
+    "src/tests/*-fail/*/*",
+    "src/tests/*-fail/*/*/exact/**",
+    "src/tests/*-pass/*",
+    "src/tests/*-pass/exact/**"
   ]
 }
