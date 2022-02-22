@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable no-fallthrough */
+/* eslint-disable functional/no-expression-statement */
 var execute_1 = require("./config/execute");
 execute_1.execute().then(function (executed) {
     switch (executed.tag) {
