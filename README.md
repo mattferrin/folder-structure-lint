@@ -16,6 +16,8 @@ This module aims to improve folder structure by only allowing safe-listed file p
 
 ### Create your config `.folder-structure-lint.json` file:
 
+I recommend grouping by both feature (`/*/` below) and file type (`hooks`, `components`, etc.):
+
 ```json
 {
   "root": "src",
@@ -23,16 +25,10 @@ This module aims to improve folder structure by only allowing safe-listed file p
     "src/App.*",
     "src/index.*",
 
-    "src/common/hooks/use*.*",
-    "src/common/components/Render*.*",
-    "src/common/handlers/handle*.*",
-
-    "src/features/*/index.*",
-    "src/features/*/hooks/use*.*",
-    "src/features/*/components/Render*.*",
-    "src/features/*/handlers/handle*.*",
-
-    "src/__tests__/*/*.test.tsx"
+    "src/*/index.*",
+    "src/*/hooks/use*.*",
+    "src/*/components/*.*",
+    "src/*/others/handle*.*",
   ]
 }
 ```
