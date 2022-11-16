@@ -28,7 +28,7 @@ I recommend grouping by both feature (`/*/` below) and file type (`hooks`, `comp
     "src/*/index.*",
     "src/*/hooks/use*.*",
     "src/*/components/*.*",
-    "src/*/others/handle*.*",
+    "src/*/others/*.*",
   ]
 }
 ```
