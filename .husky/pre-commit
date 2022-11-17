@@ -4,4 +4,5 @@
 npm run fsl
 npm run jscpd
 npm run pretty
+npm run lint
 npm run test:coverage

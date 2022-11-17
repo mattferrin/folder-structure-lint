@@ -26,9 +26,11 @@ describe("buildAllFilesCallback", () => {
       if (shouldError) {
         const result = await test.then((x) => x).catch((result) => result);
         expect(result).toBe(expectedResult);
+        return;
       } else {
         const result = await test.then((result) => result);
         expect(result).toStrictEqual(expectedResult);
+        return;
       }
     }
   );
