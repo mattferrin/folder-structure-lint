@@ -37,7 +37,8 @@
     "pretty": "npx prettier --check src",
     "test:box": "jest tests --watchAll",
     "test:coverage": "jest src --coverage --collectCoverageFrom=src/**/*.ts",
-    "test": "jest src --watchAll"
+    "test": "jest src --watchAll",
+    "tsc": "npx tsc --noEmit"
   },
   "author": "",
   "jest": {
