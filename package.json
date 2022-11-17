@@ -20,20 +20,24 @@
     "babel-jest": "^27.5.1",
     "eslint": "^8.9.0",
     "eslint-plugin-functional": "^4.2.0",
+    "husky": "^8.0.2",
     "jest": "^27.5.1",
+    "jscpd": "^3.5.1",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "tsutils": "^3.21.0"
   },
   "scripts": {
-    "build": "rimraf dist && tsc",
     "build:w": "tsc --watch",
-    "test": "jest src --watchAll",
-    "test:coverage": "jest src --coverage --collectCoverageFrom=src/**/*.ts",
+    "build": "rimraf dist && tsc",
+    "fsl": "node dist/index.js",
+    "jscpd": "npx jscpd --threshold=1 --reporters=html ./src",
+    "lint": "eslint src/**/*.ts",
+    "prepare": "husky install",
+    "pretty": "npx prettier --check src",
     "test:box": "jest tests --watchAll",
-    "format": "prettier --write src/**/*.ts",
-    "lint": "eslint --fix src/**/*.ts",
-    "fsl": "node dist/index.js"
+    "test:coverage": "jest src --coverage --collectCoverageFrom=src/**/*.ts",
+    "test": "jest src --watchAll"
   },
   "author": "",
   "jest": {
