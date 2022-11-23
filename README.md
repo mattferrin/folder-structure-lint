@@ -12,7 +12,7 @@ This module aims to improve folder structure by only allowing safe-listed file p
 
 ### Install
 
-`npm i -D mattferrin/folder-structure-lint`
+`npm i -D @clowd/fsl`
 
 ### Create your config `.folder-structure-lint.json` file:
 
@@ -38,7 +38,7 @@ Add this to your `package.json`:
 ```json
 {
   "scripts": {
-    "fsl": "node node_modules/folder-structure-lint/dist/index.js"
+    "fsl": "node node_modules/@clowd/fsl/dist/index.js"
   }
 }
 ```
