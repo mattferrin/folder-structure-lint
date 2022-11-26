@@ -13,6 +13,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@clowd/fsl": "^1.0.4",
+    "@clowd/suggest-test": "^0.0.1-rc.0",
     "@types/glob": "^7.1.3",
     "@types/jest": "^27.4.0",
     "@types/node": "^15.0.2",
@@ -38,11 +39,12 @@
     "prepare": "husky install",
     "pretty": "npx prettier --check src",
     "publish": "npm publish --access public",
+    "st:ts": "suggest-test coverage/clover.xml --includeTested=false --includeStatements=false",
     "test:box": "jest tests --watchAll",
     "test:coverage": "jest src --coverage --collectCoverageFrom=src/**/*.ts",
     "test": "jest src --watchAll",
     "tsc": "npx tsc --noEmit"
-  },
+    },
   "author": "",
   "jest": {
     "coverageThreshold": {
