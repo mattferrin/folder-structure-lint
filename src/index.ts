@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /* eslint-disable functional/functional-parameters */
 /* eslint-disable functional/no-return-void */
 /* eslint-disable @typescript-eslint/no-floating-promises */

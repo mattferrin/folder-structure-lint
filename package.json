@@ -1,6 +1,6 @@
 {
   "name": "@clowd/fsl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Improve folder structure by only allowing safe-listed file paths",
   "main": "dist/index.js",
   "dependencies": {
@@ -40,11 +40,12 @@
     "pretty": "npx prettier --check src",
     "publish": "npm publish --access public",
     "st:ts": "suggest-test coverage/clover.xml --includeTested=false --includeStatements=false",
+    "st": "suggest-test",
     "test:box": "jest tests --watchAll",
     "test:coverage": "jest src --coverage --collectCoverageFrom=src/**/*.ts",
     "test": "jest src --watchAll",
     "tsc": "npx tsc --noEmit"
-    },
+  },
   "author": "",
   "jest": {
     "coverageThreshold": {
@@ -62,5 +63,8 @@
     "README.md"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/mattferrin/folder-structure-lint"
+  "homepage": "https://github.com/mattferrin/folder-structure-lint",
+  "bin": {
+    "fsl": "dist/index.js"
+  }
 }

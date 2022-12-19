@@ -38,7 +38,7 @@ Add this to your `package.json`:
 ```json
 {
   "scripts": {
-    "fsl": "node node_modules/@clowd/fsl/dist/index.js"
+    "fsl": "fsl"
   }
 }
 ```
