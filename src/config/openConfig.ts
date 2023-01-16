@@ -15,7 +15,9 @@ export type OpenError = {
   readonly message: string;
 };
 export type OpenResult = OpenSuccess | OpenError;
-export type FileName = ".folder-structure-lint.json";
+export type FileName =
+  | ".folder-structure-lint.json"
+  | ".folder-structure-lint.js";
 
 export async function openConfig(): Promise<OpenResult> {
   return new Promise<OpenResult>((accept) => {
